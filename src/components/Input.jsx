@@ -2,7 +2,7 @@ import '../styles/Input.css';
 
 function Input({ label, type, name, value, onChange }) {
   return (
-    <>
+    <div className="input-control">
       <label htmlFor={name}>{label}</label>
       <input
         type={type}
@@ -10,8 +10,9 @@ function Input({ label, type, name, value, onChange }) {
         id={name}
         value={value}
         onChange={onChange}
+        autoComplete="off"
       />
-    </>
+    </div>
   );
 }
 
