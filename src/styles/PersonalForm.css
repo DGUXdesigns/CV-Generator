@@ -1,0 +1,9 @@
+.form-control,
+.personal-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.personal-form {
+  flex-direction: column;
+}
