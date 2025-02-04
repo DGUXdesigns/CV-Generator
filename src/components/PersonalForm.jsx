@@ -1,8 +1,10 @@
 import Input from './Input';
+import '../styles/PersonalForm.css';
 
 function PersonalForm({ data, handleChange }) {
   return (
     <div className="personal-form">
+      <h2>Personal Details</h2>
       <div className="form-control">
         <Input
           label={'First Name'}
