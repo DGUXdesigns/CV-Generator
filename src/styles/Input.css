@@ -1,0 +1,14 @@
+.input-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+input {
+  padding: 0.5rem;
+  border: none;
+  background-color: #121212;
+  border-radius: 0.25rem;
+  color: white;
+}
