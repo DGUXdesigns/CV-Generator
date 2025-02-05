@@ -13,6 +13,24 @@
   align-items: center;
 }
 
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.delete-btn {
+  font-size: 1.25rem;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: orangered;
+}
+
 .acc-label {
   display: flex;
   flex-direction: column;
@@ -58,12 +76,13 @@
   align-items: center;
   justify-content: center;
   transform-origin: center;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
   will-change: transform;
 }
 
 .chevron.open {
   transform: rotate(180deg);
+  color: orangered;
 }
 
 /* open animation */
