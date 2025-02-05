@@ -54,6 +54,7 @@ function ExperienceForm({ experience, onChange, onDelete }) {
             name={'employer'}
             value={experience.employer}
             onChange={handleChange}
+            id={'employer' + experience.id}
           />
 
           <div className="form-control">
@@ -63,6 +64,7 @@ function ExperienceForm({ experience, onChange, onDelete }) {
               name={'jobTitle'}
               value={experience.jobTitle}
               onChange={handleChange}
+              id={'jobTitle' + experience.id}
             />
             <Input
               label={'City'}
@@ -70,6 +72,7 @@ function ExperienceForm({ experience, onChange, onDelete }) {
               name={'city'}
               value={experience.city}
               onChange={handleChange}
+              id={'city' + experience.id}
             />
           </div>
 
@@ -80,6 +83,7 @@ function ExperienceForm({ experience, onChange, onDelete }) {
               name={'startDate'}
               value={experience.startDate}
               onChange={handleChange}
+              id={'startDate' + experience.id}
             />
             <Input
               label={'End Date'}
@@ -87,15 +91,17 @@ function ExperienceForm({ experience, onChange, onDelete }) {
               name={'endDate'}
               value={experience.endDate}
               onChange={handleChange}
+              id={'endDate' + experience.id}
             />
           </div>
 
           <div className="form-group">
-            <label>Description</label>
+            <label htmlFor={'description' + experience.id}>Description</label>
             <textarea
               name="description"
               value={experience.description}
               onChange={handleChange}
+              id={'description' + experience.id}
             />
           </div>
         </div>
