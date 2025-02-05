@@ -1,13 +1,13 @@
 import '../styles/Input.css';
 
-function Input({ label, type, name, value, onChange }) {
+function Input({ label, type, name, value, onChange, id }) {
   return (
     <div className="input-control">
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <input
         type={type}
         name={name}
-        id={name}
+        id={id}
         value={value}
         onChange={onChange}
         autoComplete="off"
