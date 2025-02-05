@@ -1,5 +1,5 @@
-import ResumeForm from './components/ResumeForm';
 import { useState } from 'react';
+import ResumeForm from './components/ResumeForm';
 
 function App() {
   const [resumeData, setResumeData] = useState({
@@ -11,6 +11,7 @@ function App() {
     city: '',
     summary: '',
     employment: [],
+    education: [],
   });
 
   function handleChange(e) {
@@ -23,7 +24,11 @@ function App() {
   return (
     <>
       <form>
-        <ResumeForm data={resumeData} handleChange={handleChange} />
+        <ResumeForm
+          data={resumeData}
+          handleChange={handleChange}
+          setData={setResumeData}
+        />
       </form>
       <main></main>
     </>
