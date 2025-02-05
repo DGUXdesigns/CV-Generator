@@ -1,0 +1,9 @@
+.experience-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.experience-section button {
+  align-self: flex-start;
+}
