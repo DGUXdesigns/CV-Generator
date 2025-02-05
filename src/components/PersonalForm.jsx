@@ -12,6 +12,7 @@ function PersonalForm({ data, handleChange }) {
           name={'firstName'}
           value={data.firstName}
           onChange={handleChange}
+          id={'firstName'}
         />
 
         <Input
@@ -20,6 +21,7 @@ function PersonalForm({ data, handleChange }) {
           name={'lastName'}
           value={data.lastName}
           onChange={handleChange}
+          id={'lastName'}
         />
       </div>
 
@@ -30,6 +32,7 @@ function PersonalForm({ data, handleChange }) {
           name={'email'}
           value={data.email}
           onChange={handleChange}
+          id={'email'}
         />
 
         <Input
@@ -38,6 +41,7 @@ function PersonalForm({ data, handleChange }) {
           name={'phone'}
           value={data.phone}
           onChange={handleChange}
+          id={'phone'}
         />
       </div>
 
@@ -48,6 +52,7 @@ function PersonalForm({ data, handleChange }) {
           name={'country'}
           value={data.country}
           onChange={handleChange}
+          id={'country'}
         />
 
         <Input
@@ -56,6 +61,7 @@ function PersonalForm({ data, handleChange }) {
           name={'city'}
           value={data.city}
           onChange={handleChange}
+          id={'city'}
         />
       </div>
     </div>
