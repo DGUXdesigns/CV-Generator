@@ -1,0 +1,9 @@
+.education-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.education-section button {
+  align-self: flex-start;
+}
