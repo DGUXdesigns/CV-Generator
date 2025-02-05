@@ -9,6 +9,7 @@ function EmploymentForm({ data, setData }) {
       employment: [
         ...prev.employment,
         {
+          id: crypto.randomUUID(),
           employer: '',
           city: '',
           jobTitle: '',
@@ -20,15 +21,20 @@ function EmploymentForm({ data, setData }) {
     }));
   }
 
-  function handleExperienceChange(index, field, value) {
+  function handleExperienceChange(id, field, value) {
     setData((prev) => {
-      const updatedExp = [...prev.employment];
-      updatedExp[index] = {
-        ...updatedExp[index],
-        [field]: value,
-      };
+      const updatedExp = prev.employment.map((exp) =>
+        exp.id === id ? { ...exp, [field]: value } : exp,
+      );
       return { ...prev, employment: updatedExp };
     });
+  }
+
+  function handleDeleteExperience(id) {
+    setData((prev) => ({
+      ...prev,
+      employment: prev.employment.filter((exp) => exp.id !== id),
+    }));
   }
 
   return (
@@ -40,12 +46,12 @@ function EmploymentForm({ data, setData }) {
         Y, by doing Z)
       </p>
 
-      {data.employment.map((exp, index) => (
+      {data.employment.map((exp) => (
         <ExperienceForm
-          key={index}
-          index={index}
+          key={exp.id}
           experience={exp}
           onChange={handleExperienceChange}
+          onDelete={handleDeleteExperience}
         />
       ))}
 
