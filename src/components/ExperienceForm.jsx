@@ -1,14 +1,19 @@
 import { useState, useEffect } from 'react';
-import { FiChevronDown } from 'react-icons/fi';
+import { FiChevronDown, FiTrash2 } from 'react-icons/fi';
 import Input from './Input';
 import '../styles/ExperienceForm.css';
 
-function ExperienceForm({ experience, index, onChange }) {
+function ExperienceForm({ experience, onChange, onDelete }) {
   const [isOpen, setIsOpen] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
 
   function handleChange(e) {
-    onChange(index, e.target.name, e.target.value);
+    onChange(experience.id, e.target.name, e.target.value);
+  }
+
+  function handleDelete(e) {
+    e.stopPropagation();
+    onDelete(experience.id);
   }
 
   useEffect(() => {
@@ -26,9 +31,19 @@ function ExperienceForm({ experience, index, onChange }) {
           <h3>{experience.employer || 'New Experience'}</h3>
           <p>{experience.jobTitle || '(Not specified)'}</p>
         </div>
-        <span className={`chevron ${isOpen ? 'open' : ''}`}>
-          <FiChevronDown />
-        </span>
+
+        <div className="header-actions">
+          <button
+            className="delete-btn"
+            onClick={handleDelete}
+            aria-label="Delete experience"
+          >
+            <FiTrash2 />
+          </button>
+          <span className={`chevron ${isOpen ? 'open' : ''}`}>
+            <FiChevronDown />
+          </span>
+        </div>
       </div>
 
       {shouldRender && (
