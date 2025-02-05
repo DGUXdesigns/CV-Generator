@@ -1,0 +1,15 @@
+.add-btn {
+  padding: 1rem 0;
+  color: orangered;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  transform-origin: bottom left;
+}
+
+.add-btn:hover {
+  transform: scale(1.05);
+  color: orange;
+}
